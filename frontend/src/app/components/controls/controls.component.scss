@@ -1,0 +1,14 @@
+.wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    button {
+        background: black;
+        color: white;
+        border: none;
+        padding: 2vh;
+        cursor: pointer;
+    }
+}

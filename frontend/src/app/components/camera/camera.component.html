@@ -1,0 +1,6 @@
+<div class="wrapper">
+    <img [src]="this.getImageUrl()" *ngIf="this.imageLoaded" />
+    <div *ngIf="!this.imageLoaded" class="fallback">
+        <div class="dots"></div>
+    </div>
+</div>
