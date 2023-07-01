@@ -23,4 +23,12 @@ export class SocketService {
       });
     });
   }
+
+  onPTZ(): Observable<string> {
+    return new Observable((observer) => {
+      this.socket.on('ptz', (ptz) => {
+        observer.next(JSON.stringify(ptz));
+      });
+    });
+  }
 }

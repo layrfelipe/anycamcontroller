@@ -51,8 +51,7 @@ function getPosition(string, subString, index) {
                 }
                 let b64Img = arrayBufferToBase64(body)
                 saveFrame(b64Img);
-            });
-            })
+            })});
         }, 2000);
     });
 })();

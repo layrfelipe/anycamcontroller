@@ -26,5 +26,4 @@ export class CameraComponent implements OnInit {
     getImageUrl(): string {
       return this.image ? String(this.image) : '';
     }
-
 }

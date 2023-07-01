@@ -5,6 +5,7 @@ const io = require("socket.io")(httpServer, {
   cors: {origin : "*"}
 });
 const getFrame = require("./redis").getFrame
+const getPTZ = require("./redis").getPTZ
 
 require('dotenv').config();
 const SERVER_PORT = process.env.SERVER_PORT
@@ -38,6 +39,25 @@ io.on("connection", async (socket) => {
   }
 
   emitFrame();
+
+  async function emitPTZ() {
+    try {
+      let buffer = await getPTZ()
+      socket.emit("ptz", buffer);
+
+      setTimeout(() => {
+        emitPTZ();        
+      }, 2000);
+    }
+    catch (err) {
+      console.log("error on emitPTZ socket event");
+      setTimeout(() => {
+        emitPTZ();        
+      }, 2000);
+    }
+  }
+
+  emitPTZ();
 
   socket.on("disconnect", () => {
     console.log("socket disconnection");

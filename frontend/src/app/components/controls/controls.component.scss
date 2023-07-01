@@ -1,20 +1,25 @@
 .wrapper {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    column-gap: 2vw;
-    row-gap: 2vh;
+    display: flex;
+    flex-direction: column;
 
-    button {
-        background: transparent;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 30px;
-    }
+    .directional-wrapper {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        column-gap: 2vw;
+        row-gap: 2vh;
 
-    button:hover {
-        background: grey;
+        button {
+            background: transparent;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        button:hover {
+            background: grey;
+        }
     }
 }

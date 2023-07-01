@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ControlsPageComponent } from './pages/controls-page/controls-page.component';
 import { CameraComponent } from './components/camera/camera.component';
 import { ControlsComponent } from './components/controls/controls.component';
+import { StatusComponent } from './components/status/status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ControlsPageComponent,
     CameraComponent,
-    ControlsComponent
+    ControlsComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
