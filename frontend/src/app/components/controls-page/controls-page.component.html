@@ -1,0 +1,14 @@
+<main>
+    <div class="stream-wrapper">
+        <img [src]="this.getImageUrl()" *ngIf="this.imageLoaded" />
+    </div>
+
+    <div class="buttons-wrapper">
+        <button (click)="this.moveTop()">TOP</button>
+        <button (click)="this.moveBottom()">BOTTOM</button>
+        <br/>
+        <br/>
+        <button (click)="this.moveLeft()">LEFT</button>
+        <button (click)="this.moveRight()">RIGHT</button>
+    </div>
+</main>
