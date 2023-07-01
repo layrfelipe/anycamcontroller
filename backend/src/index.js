@@ -42,8 +42,8 @@ io.on("connection", async (socket) => {
 
   async function emitPTZ() {
     try {
-      let buffer = await getPTZ()
-      socket.emit("ptz", buffer);
+      let ptz = await getPTZ()
+      socket.emit("ptz", ptz);
 
       setTimeout(() => {
         emitPTZ();        
