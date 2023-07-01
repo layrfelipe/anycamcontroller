@@ -19,11 +19,11 @@ export class ControlsComponent {
     this.socket.cameraCommand("moveRight")
   }
 
-  moveTop() {
-    this.socket.cameraCommand("moveTop")
+  moveUp() {
+    this.socket.cameraCommand("moveUp")
   }
 
-  moveBottom() {
-    this.socket.cameraCommand("moveBottom")
+  moveDown() {
+    this.socket.cameraCommand("moveDown")
   }
 }
