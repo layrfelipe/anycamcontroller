@@ -14,9 +14,9 @@ export class StatusComponent implements OnInit {
   ){}
 
   ngOnInit() {
-    this.socket.onPTZ().subscribe((ptz) => {
-      if (ptz) {
-        this.ptz = JSON.parse(ptz)
+    this.socket.onStream().subscribe((stream) => {
+      if (stream) {
+        this.ptz = JSON.parse(stream).ptz
       }
     });
   }

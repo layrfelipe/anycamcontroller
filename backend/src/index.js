@@ -21,43 +21,29 @@ const OPTIONS = {
 io.on("connection", async (socket) => {
   console.log("new socket connection");
 
-  async function emitFrame() {
+  async function fakeStream() {
     try {
-      let buffer = await getFrame()
-      socket.emit("frame", buffer);
-
-      setTimeout(() => {
-        emitFrame();        
-      }, 2000);
-    }
-    catch (err) {
-      console.log("error on emitFrame socket event");
-      setTimeout(() => {
-        emitFrame();        
-      }, 2000);
-    }
-  }
-
-  emitFrame();
-
-  async function emitPTZ() {
-    try {
+      let frame = await getFrame()
       let ptz = await getPTZ()
-      socket.emit("ptz", ptz);
+      let data = {
+        frame,
+        ptz
+      }
+      socket.emit("stream", data);
 
       setTimeout(() => {
-        emitPTZ();        
+        fakeStream();        
       }, 2000);
     }
     catch (err) {
-      console.log("error on emitPTZ socket event");
+      console.log("error on fakeStream socket event");
       setTimeout(() => {
-        emitPTZ();        
+        fakeStream();        
       }, 2000);
     }
   }
 
-  emitPTZ();
+  fakeStream();
 
   socket.on("disconnect", () => {
     console.log("socket disconnection");

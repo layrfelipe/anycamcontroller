@@ -15,9 +15,9 @@ export class CameraComponent implements OnInit {
     ){}
   
     ngOnInit() {
-      this.socket.onFrame().subscribe((image) => {
-        if (image) {
-          this.image = 'data:image/png;base64,' + image
+      this.socket.onStream().subscribe((stream) => {
+        if (stream) {
+          this.image = 'data:image/png;base64,' + JSON.parse(stream).frame
           this.imageLoaded = true;
         }
       });

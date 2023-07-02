@@ -16,18 +16,10 @@ export class SocketService {
     this.socket.emit(command)
   }
 
-  onFrame(): Observable<string> {
+  onStream(): Observable<string> {
     return new Observable((observer) => {
-      this.socket.on('frame', (image) => {
-        observer.next(image);
-      });
-    });
-  }
-
-  onPTZ(): Observable<string> {
-    return new Observable((observer) => {
-      this.socket.on('ptz', (ptz) => {
-        observer.next(JSON.stringify(ptz));
+      this.socket.on('stream', (streamData) => {
+        observer.next(JSON.stringify(streamData));
       });
     });
   }

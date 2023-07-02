@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="this.ptz">
     <p>pan {{this.ptz.pan | number: '1.0-3'}}</p>
     <p>tilt {{this.ptz.tilt | number: '1.0-3'}}</p>
     <p>zoom {{this.ptz.zoom | number: '1.0-3'}}</p>
