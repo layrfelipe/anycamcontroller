@@ -7,7 +7,7 @@
     "start-server": "node src/index.js",
     "dev-server": "nodemon src/index.js",
     "dev-streamer": "nodemon src/snap.js",
-    "dev-logger": "nodemon src/ptz.js"
+    "dev-ptz": "nodemon src/ptz.js"
   },
   "keywords": [],
   "author": "Layr Felipe",

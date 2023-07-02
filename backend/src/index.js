@@ -86,6 +86,18 @@ io.on("connection", async (socket) => {
     socket.on("moveDown", () => {
       cameraInstance.relativeMove({ x: 0, y: -0.1 });
     });
+
+    socket.on("continuousMoveLeft", () => {
+      cameraInstance.continuousMove({ x: -0.3 });
+    });
+
+    socket.on("continuousMoveRight", () => {
+      cameraInstance.continuousMove({ x: 0.3 });
+    });
+
+    socket.on("stop", () => {
+      cameraInstance.stop();
+    });
   });
 });
 

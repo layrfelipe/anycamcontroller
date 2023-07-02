@@ -1,23 +1,28 @@
 .wrapper {
     width: 100%;
-
+    border-radius: 10px;
+    
     img {
-       width: 100%;
-       vertical-align: top;
+        width: 100%;
+        vertical-align: top;
+        border-radius: 10px;
+        border: 2px solid red;
     }
 
     .fallback {
         width: 60vw;
         height: calc(60vw * 0.5625);
-        background: white;
+        background: black;
         display: flex;
         justify-content: center;
         align-items: center;
+        border: 2px solid rgb(147, 129, 129);
+        border-radius: 10px;
 
         .dots {
             width: 60px;
             aspect-ratio: 2;
-            --_g: no-repeat radial-gradient(circle closest-side,#000 90%,#0000);
+            --_g: no-repeat radial-gradient(circle closest-side,white 90%,#0000);
             background: 
                 var(--_g) 0%   50%,
                 var(--_g) 50%  50%,

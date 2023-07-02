@@ -13,13 +13,12 @@ main {
         height: calc(60vw * 0.5625);
     }
 
-    .buttons-wrapper {
-        align-self: flex-start;
+    .controls-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: calc(60vw * 0.5625);
         margin-left: 2vw;
-    }
-
-    .status-wrapper {
-        align-self: flex-start;
-        margin-left: 4vw;
     }
 }

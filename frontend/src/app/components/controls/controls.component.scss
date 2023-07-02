@@ -2,6 +2,24 @@
     display: flex;
     flex-direction: column;
 
+    button {
+        background: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 30px;
+
+        div {
+            width: 20px;
+            height: 20px;
+            background: white;
+        }
+    }
+
+    button:hover {
+        background: grey;
+    }
+
     .directional-wrapper {
         width: 100%;
         display: grid;
@@ -9,17 +27,24 @@
         grid-template-rows: 1fr 1fr 1fr;
         column-gap: 2vw;
         row-gap: 2vh;
+    }
 
-        button {
-            background: transparent;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 30px;
-        }
+    .continuous-directional-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 7.5vh;
+    }
 
-        button:hover {
-            background: grey;
-        }
+    .stop-wrapper {
+        margin-top: 7.5vh;
+        border: 1px solid white;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .stop-wrapper:hover {
+        background: grey;
     }
 }

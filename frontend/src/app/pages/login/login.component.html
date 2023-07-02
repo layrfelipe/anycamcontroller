@@ -1,0 +1,8 @@
+<main>
+    <form class="form-wrapper" [formGroup]="this.loginForm" (ngSubmit)="this.onSubmit()">
+        <input id="username" placeholder="Username" formControlName="username"/>
+        <input placeholder="Password" type="password" formControlName="password"/>
+        <p *ngIf="this.showWarning">Invalid credentials</p>
+        <button [disabled]="!this.loginForm.valid">Login</button>
+    </form>
+</main>

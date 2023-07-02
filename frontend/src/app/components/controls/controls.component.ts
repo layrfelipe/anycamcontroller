@@ -26,4 +26,16 @@ export class ControlsComponent {
   moveDown() {
     this.socket.cameraCommand("moveDown")
   }
+
+  continuousMoveLeft() {
+    this.socket.cameraCommand("continuousMoveLeft")
+  }
+
+  continuousMoveRight() {
+    this.socket.cameraCommand("continuousMoveRight")
+  }
+
+  stop() {
+    this.socket.cameraCommand("stop")
+  }
 }
