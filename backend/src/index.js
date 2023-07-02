@@ -8,6 +8,7 @@ const getFrame = require("./redis").getFrame
 const getPTZ = require("./redis").getPTZ
 
 require('dotenv').config();
+const STREAM_INTERVAL = process.env.STREAM_INTERVAL
 const SERVER_PORT = process.env.SERVER_PORT
 const OPTIONS = {
   hostname: process.env.CAMERA_IP,
@@ -15,7 +16,7 @@ const OPTIONS = {
   password: process.env.CAMERA_PASSWORD,
   port: process.env.CAMERA_PORT,
   timeout: parseInt(process.env.CAMERA_TIMEOUT),
-  preserveAddress: true 
+  preserveAddress: true
 }
 
 io.on("connection", async (socket) => {
@@ -33,13 +34,13 @@ io.on("connection", async (socket) => {
 
       setTimeout(() => {
         fakeStream();        
-      }, 2000);
+      }, STREAM_INTERVAL);
     }
     catch (err) {
       console.log("error on fakeStream socket event");
       setTimeout(() => {
         fakeStream();        
-      }, 2000);
+      }, STREAM_INTERVAL);
     }
   }
 

@@ -28,5 +28,5 @@ new Cam(OPTIONS, async function CamFunc(err) {
                 "zoom": b.position.zoom
             })
         });
-    }, 2000);
+    }, process.env.REQUEST_DATA_TO_CAMERA_INTERVAL);
 });

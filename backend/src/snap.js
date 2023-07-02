@@ -1,5 +1,6 @@
 var Cam = require('onvif').Cam;
 const saveFrame = require("./redis").saveFrame
+var ProxyAgent = require('proxy-agent').ProxyAgent;
 
 require('dotenv').config();
 const OPTIONS = {
@@ -8,7 +9,8 @@ const OPTIONS = {
     password: process.env.CAMERA_PASSWORD,
     port: process.env.CAMERA_PORT,
     timeout: parseInt(process.env.CAMERA_TIMEOUT),
-    preserveAddress: true 
+    preserveAddress: true ,
+    agent: new ProxyAgent("socks5://localhost:3020")
   }
 
 function arrayBufferToBase64(buffer) {
@@ -52,6 +54,6 @@ function getPosition(string, subString, index) {
                 let b64Img = arrayBufferToBase64(body)
                 saveFrame(b64Img);
             })});
-        }, 2000);
+        }, process.env.REQUEST_DATA_TO_CAMERA_INTERVAL);
     });
 })();
