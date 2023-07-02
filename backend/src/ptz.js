@@ -11,7 +11,6 @@ const OPTIONS = {
     preserveAddress: true 
 }
 
-
 new Cam(OPTIONS, async function CamFunc(err) {
     if (err) {
         console.log("Connection to camera...", err)
